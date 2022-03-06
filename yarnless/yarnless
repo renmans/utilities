@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+fname="yarnless_logs/yarnless_$1_$(date +"%s")"
+
+yarn logs -applicationId $1 | ./yarnless.py | sort | uniq >$fname
+
+echo "Log: $fname"
+tail -n20 $fname
