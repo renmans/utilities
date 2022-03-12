@@ -2,6 +2,9 @@
 
 fname="yarnless_logs/yarnless_$1_$(date +"%s")"
 
+# yarnless.py is an alternative to the sed utility, which is not available on 
+# the server for which this program is intended
+
 yarn logs -applicationId $1 | ./yarnless.py | sort | uniq >$fname
 
 echo "Log: $fname"
