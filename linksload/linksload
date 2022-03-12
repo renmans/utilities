@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# To get list of links use add-on "URLs List"
+# $1 - file with links
+
+dirname="linksload_$(date +"%s")"
+
+mkdir $dirname && cd $dirname
+wget -q -i <(cat ../$1 | sort | uniq)
