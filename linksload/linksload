@@ -5,5 +5,4 @@
 
 dirname="linksload_$(date +"%s")"
 
-mkdir $dirname && cd $dirname
-wget -q -i <(cat ../$1 | sort | uniq)
+wget -q -i <(cat $1 | sort | uniq) -P $dirname
