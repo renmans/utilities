@@ -5,4 +5,5 @@
 
 dirname="linksload_$(date +"%s")"
 
-wget -q -i <(cat $1 | sort | uniq) -P $dirname
+wget -q -i <(cat $1 | grep -E "*.(png|jpg|jpeg|mp4|webm|gif)$" | sort | \
+    uniq) -P $dirname
