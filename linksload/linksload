@@ -2,6 +2,7 @@
 
 # To get list of links use add-on "URLs List"
 # $1 - file with links
+# /usr/local/bin
 
 dirname="linksload_$(date +"%s")"
 
